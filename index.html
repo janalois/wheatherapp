@@ -18,6 +18,7 @@
 
       <div class="weather">
         <img src="images/rain.png" alt="a picture of the current weather" class="weather-icon" />
+        <p class="status">Nederbörd</p>
         <h1 class="temp">22°c</h1>
         <h2 class="city">New York</h2>
         <div class="details">
@@ -63,14 +64,19 @@
 
           if (data.weather[0].main == "Clouds") {
             weatherIcon.src = "images/clouds.png";
+            document.querySelector(".status").innerHTML = "Mulet";
           } else if (data.weather[0].main == "Clear") {
             weatherIcon.src = "images/clear.png";
+            document.querySelector(".status").innerHTML = "Klart";
           } else if (data.weather[0].main == "Rain") {
             weatherIcon.src = "images/Rain.png";
+            document.querySelector(".status").innerHTML = "Nederbörd";
           } else if (data.weather[0].main == "Drizzle") {
             weatherIcon.src = "images/drizzle.png";
+            document.querySelector(".status").innerHTML = "Duggregn";
           } else if (data.weather[0].main == "Mist") {
             weatherIcon.src = "images/mist.png";
+            document.querySelector(".status").innerHTML = "Dimma";
           }
           document.querySelector(".error").style.display = "none";
           document.querySelector(".weather").style.display = "block";
