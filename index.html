@@ -21,6 +21,7 @@
         <p class="status">Nederbörd</p>
         <h1 class="temp">22°c</h1>
         <h2 class="city">Stockholm</h2>
+        <p id="time"></p>
         <div class="details">
           <div class="col">
             <img src="images/humidity.png" alt="humidity" />
@@ -101,6 +102,13 @@
         }
       });
       //checkWeather();
+      function refreshTime() {
+        const timeDisplay = document.getElementById("time");
+        const dateString = new Date().toLocaleString();
+        const formattedString = dateString.replace(", ", " - ");
+        timeDisplay.textContent = formattedString;
+      }
+      setInterval(refreshTime, 1000);
     </script>
   </body>
 </html>
