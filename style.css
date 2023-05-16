@@ -5,13 +5,17 @@
   box-sizing: border-box;
 }
 
+p {
+  margin-left: 10px;
+}
+
 body {
   background-color: #70d169;
 }
 
 .card {
   width: 90%;
-  max-width: 600px;
+  max-width: 700px;
   background: linear-gradient(135deg, #9795ef, #f9c5d1);
   color: #fff;
   margin: 100px auto 0;
@@ -89,9 +93,11 @@ body {
 }
 
 .humidity,
-.wind .pressure {
+.wind,
+.pressure {
   font-size: 28px;
   margin-top: -6px;
+  margin-left: 10px;
 }
 
 .error {
