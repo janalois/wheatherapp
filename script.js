@@ -1,8 +1,9 @@
-const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
-const apiKey = "dc75337ee5abd0af183221a7c1e91f33";
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q="; // Länken till APIn där datan hämtas in.
+const apiKey = "dc75337ee5abd0af183221a7c1e91f33"; // Min personliga API nyckel.
 
 const weatherIcon = document.querySelector(".weather-icon");
 
+// Funktionen som hämtar och fördelar väderdatan till sina platser i websidan.
 async function checkWeather(city) {
   const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
 
@@ -39,12 +40,15 @@ async function checkWeather(city) {
     document.querySelector(".weather").style.display = "block";
   }
 }
+
+// En timer som uppdaterar väderdatan var 30e minut.
 var intervalId = window.setInterval(function () {
   checkWeather("stockholm");
 }, 1800000);
 
 checkWeather("stockholm");
 
+// Funktionen som visar datum och tid och uppdaterar den varje sekund.
 function refreshTime() {
   const timeDisplay = document.getElementById("time");
   const dateString = new Date().toLocaleString();
